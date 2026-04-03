@@ -1,3 +1,4 @@
+from typing import Iterable, Union
 class Animal:
     def __init__(
             self, name: str,
@@ -36,12 +37,9 @@ class Dog(Animal):
         print("The slippers delivered!")
 
 
-from typing import Iterable, Union
-
 def feed_animals(animals: Iterable) -> Union[int, float]:
     return sum(animal.feed() for animal in animals)
 
-# Example usage:
 pets = [Cat("Luna"), Dog("Buddy")]
 total_food = feed_animals(pets)
 print(f"Total food used: {total_food}")
